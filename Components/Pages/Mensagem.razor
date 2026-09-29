@@ -1,0 +1,20 @@
+@page "/mensagem"
+@rendermode InteractiveServer
+
+<button @onclick="AlternarVisibilidade">
+    @(exibirMensagem ? "Ocultar Mensagem" : "Exibir Mensagem")
+</button>
+
+@if (exibirMensagem)
+{
+    <p>Bem-vindo ao desenvolvimento web com .NET 10!</p>
+}
+
+@code {
+    private bool exibirMensagem = false;
+
+    private void AlternarVisibilidade()
+    {
+        exibirMensagem = !exibirMensagem;
+    }
+}
